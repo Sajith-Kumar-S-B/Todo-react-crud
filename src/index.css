@@ -1,13 +1,63 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  background: linear-gradient(to right, #9796f0, #fbc7d4);
+
+
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+
+  .wholediv{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+  }
+
+  .list-items{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    @apply grid sm:grid-cols-[10%_70%_10%_10%] grid-cols-[10%_70%_10%_10%] items-center bg-[#f1f8fb]
+     p-[0.8em_1em] mt-[1em] rounded
+  }
+
+  .text-area{
+   @apply bg-transparent text-black text-[0.9rem] outline-none p-[.7em_0.5em] border-black border-b 
+  }
+  .checkbox{
+ @apply h-[20px] w-[20px] appearance-none rounded-[50%] border-[2px] border-[#e1e1e1] checked:bg-[#11ba11] checked:border-[#11ba11] relative
+}
+
+.checkbox::before{
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.checkbox:checked::before{
+  position: absolute;
+  content: "\f00c";
+  color: #ffffff;
+  font-size: 0.7em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+ 
+ 
+  
+}
+
+.list-items span{
+  @apply font-normal text-[1em] break-all
+}
+
 }
